@@ -60,6 +60,8 @@ dependencies:
   # flutter_svg is used to render svg images
   flutter_svg: ^2.0.10+1
   flutter_screenutil: ^5.9.3
+  build_runner: ^2.4.10
+  build_test: ^2.2.2
 
 
 dev_dependencies:

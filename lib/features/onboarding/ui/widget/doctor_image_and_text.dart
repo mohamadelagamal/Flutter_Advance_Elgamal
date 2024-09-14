@@ -31,7 +31,7 @@ class DoctorImageAndText extends StatelessWidget {
           left: 0,
           right: 0,
           child: Container(
-            padding:  EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
@@ -41,12 +41,12 @@ class DoctorImageAndText extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'Dr. Ahmed Elgamal ',
-                  style:  TextStyles.font24Blue700Widget,
+                  style: TextStyles.font24Blue700Bold,
                 ),
                 const SizedBox(height: 10),
-                Text(
+                const Text(
                   'Professional dentist',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                     color: Colors.grey,
                   ),

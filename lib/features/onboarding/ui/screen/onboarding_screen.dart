@@ -13,29 +13,30 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea( // use SafeArea to avoid the notch and the system bar
-
         child: SingleChildScrollView(
           child: Padding(
-            padding:  EdgeInsets.only(
+            padding: EdgeInsets.only(
               top: 30.h,
               bottom: 30.h,
             ),
-            child:  Column(
+            child: Column(
               children: [
                 const DocLogoAndName(),
-                SizedBox(height: 50.h  ),
-                const DoctorImageAndText(),
-                SizedBox(height: 50.h  ),
+                SizedBox(height: 50.h),
+                SizedBox(
+                  height: 500.h, // Default height
+                //  width: 900.w,  // Default width
+                  child: const DoctorImageAndText(),
+                ),
+                SizedBox(height: 50.h),
                 Padding(
-                  padding:  EdgeInsets.symmetric(
-                    horizontal: 30.w
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
                   child: GetStartedButton(),
                 ),
               ],
             ),
           ),
-        )
+        ),
       ),
     );
   }

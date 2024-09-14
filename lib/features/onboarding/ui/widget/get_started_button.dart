@@ -9,6 +9,7 @@ class GetStartedButton extends StatelessWidget {
   const GetStartedButton({super.key});
 
 
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -25,7 +26,7 @@ class GetStartedButton extends StatelessWidget {
         ),
         child: Text(
           'Get Started',
-          style: TextStyles.font16WhiteSemiBold,
+          style: TextStyles.font16WhiteMedium,
         ));
   }
 }

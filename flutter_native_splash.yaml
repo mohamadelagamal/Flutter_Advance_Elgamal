@@ -1,3 +1,7 @@
-description: This file stores settings for Dart & Flutter DevTools.
-documentation: https://docs.flutter.dev/tools/devtools/extensions#configure-extension-enablement-states
-extensions:
+flutter_native_splash:
+  # android and ios are required below api 31 and ios 14
+  color: "#ffffff"
+  image: assets/images/splash.png
+  android_12:
+    image: assets/images/splash_screen_12.png
+    color: "#ffffff"
