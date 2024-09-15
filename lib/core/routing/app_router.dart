@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_advance_elgamal/features/home/ui/screen/home_screen.dart';
 import 'package:flutter_advance_elgamal/features/login/ui/screen/login_screen.dart';
 import 'package:flutter_advance_elgamal/features/onboarding/ui/screen/onboarding_screen.dart';
+import 'package:flutter_advance_elgamal/features/sign_up/logic/cubit/sign_up_cubit.dart';
+import 'package:flutter_advance_elgamal/features/sign_up/ui/screens/sign_up_screen.dart';
 import '../../features/login/logic/cubit/login_cubit.dart';
 import '../di/dependency_injection.dart';
 import 'routes.dart';
@@ -22,6 +24,12 @@ class AppRouter {
 
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case Routes.signUpScreen:
+        return MaterialPageRoute(builder: (_) =>
+            BlocProvider(
+              create: (context) => getIt<SignUpCubit>(),
+              child: const SignUpScreen(),
+            ));
 
       default:
         return MaterialPageRoute(

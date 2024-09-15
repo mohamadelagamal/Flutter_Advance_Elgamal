@@ -9,6 +9,7 @@ class PasswordValidation extends StatelessWidget {
   final bool specialCharacter;
   final bool hasMinLength;
   final bool hasNumber;
+  final bool showPasswordValidationWidget;
 
   const PasswordValidation(
       {super.key,
@@ -16,10 +17,13 @@ class PasswordValidation extends StatelessWidget {
       required this.hasUppercase,
       required this.specialCharacter,
       required this.hasMinLength,
-      required this.hasNumber});
+      required this.hasNumber,  this.showPasswordValidationWidget =false});
 
   @override
   Widget build(BuildContext context) {
+    if (showPasswordValidationWidget == false) {
+      return Container();
+    }
     return Column(
       children: [
         buildValidationRow(hasLowercase, 'At least one lowercase letter (a-z)'),

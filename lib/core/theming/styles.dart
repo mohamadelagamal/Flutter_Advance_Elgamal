@@ -88,5 +88,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.mainBlue,
   );
-
+  static TextStyle font15DarkBlueMedium = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.darkBlue,
+  );
+  static TextStyle font14GrayRegular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.gray,
+  );
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advance_elgamal/core/helpers/spacing.dart';
-import 'package:flutter_advance_elgamal/features/login/ui/widget/already_have_account_text.dart';
+import 'package:flutter_advance_elgamal/features/login/ui/widget/dont_have_account.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                   verticalSpace(16),
                   const TermsAndConditionsText(),
                   verticalSpace(60),
-                  const AlreadyHaveAccountText(),
+                  const DontHaveAccount(),
                   const LoginBlocListener()
                 ],
               )
@@ -65,14 +65,8 @@ class LoginScreen extends StatelessWidget {
   }
 
   void validateThenDoLogin(BuildContext context) {
-    // current state of the form using the form key to validate the form and check if it is valid or not
-    // current state is the current state of the form
-    final form = context.read<LoginCubit>().formKey.currentState;
-    if (form!.validate()) {
-      // if the form is valid then we can do the login
-      context.read<LoginCubit>().emitLoadingState(LoginRequestBody(
-          email: context.read<LoginCubit>().emailController.text,
-          password: context.read<LoginCubit>().passwordController.text));
+   if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoadingState();
     }
 
   }

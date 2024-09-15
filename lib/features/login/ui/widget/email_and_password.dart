@@ -100,6 +100,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             specialCharacter: specialCharacter,
             hasMinLength: hasMinLength,
             hasNumber: hasNumber,
+            showPasswordValidationWidget: passwordController.text.isNotEmpty,
           ),
         ],
       ),

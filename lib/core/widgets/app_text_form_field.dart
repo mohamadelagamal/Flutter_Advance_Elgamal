@@ -19,7 +19,7 @@ class AppTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String)? validator;
   const AppTextFormField(
-      {this.contentPadding,
+      {super.key, this.contentPadding,
       required this.hintText,
       this.suffixIcon,
       this.obscureText,
@@ -73,7 +73,7 @@ class AppTextFormField extends StatelessWidget {
         filled: true // to fill the background color
       ),
       obscureText: obscureText ?? false,
-      style: TextStyles.font14lightGreyRegular,
+      style: TextStyles.font14DarkBlueMedium,
       validator: (value) {
         // if (value!.isEmpty) {
         //   return 'Please enter $hintText';

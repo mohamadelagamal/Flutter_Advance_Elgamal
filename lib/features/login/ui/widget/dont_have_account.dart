@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_advance_elgamal/core/helpers/extensions.dart';
 import 'package:flutter_advance_elgamal/core/theming/styles.dart';
 
-class AlreadyHaveAccountText extends StatelessWidget {
-  const AlreadyHaveAccountText({super.key});
+import '../../../../core/routing/routes.dart';
+
+class DontHaveAccount extends StatelessWidget {
+  const DontHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,8 @@ class AlreadyHaveAccountText extends StatelessWidget {
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 // Navigate to Sign Up Screen
+                context.pushNamed(Routes.signUpScreen);
+                
               },
           ),
         ],
