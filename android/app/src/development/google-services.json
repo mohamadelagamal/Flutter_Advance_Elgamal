@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "12132878880",
+    "project_id": "flutter-advance-distribution",
+    "storage_bucket": "flutter-advance-distribution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12132878880:android:364f44544cda9ee37e4a45",
+        "android_client_info": {
+          "package_name": "com.flutter.advance.elgamal.flutter_advance_elgamal.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZy4wb6o2cpSWEnt0BVVHLfV5f_kV18to"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12132878880:android:9f7c6ad698a5e8247e4a45",
+        "android_client_info": {
+          "package_name": "com.flutter.advance.elgamal.flutter_advance_elgamal.prod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZy4wb6o2cpSWEnt0BVVHLfV5f_kV18to"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

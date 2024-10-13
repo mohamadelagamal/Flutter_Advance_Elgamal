@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
@@ -35,6 +38,26 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            // Specify the JSON file for development
+            //resValue "string", "google_app_id", "1:12132878880:android:364f44544cda9ee37e4a45"
+
+        }
+        production {
+            dimension "default"
+            applicationIdSuffix ".prod"
+            versionNameSuffix "-prod"
+            // Specify the JSON file for development
+            //resValue "string", "google_app_id", "1:12132878880:android:9f7c6ad698a5e8247e4a45"
+
         }
     }
 }
