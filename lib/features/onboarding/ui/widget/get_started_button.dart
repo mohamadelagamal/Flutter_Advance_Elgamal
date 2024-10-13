@@ -22,7 +22,7 @@ class GetStartedButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          minimumSize:  Size(double.infinity, 52),
+          minimumSize:  const Size(double.infinity, 52),
         ),
         child: Text(
           'Get Started',

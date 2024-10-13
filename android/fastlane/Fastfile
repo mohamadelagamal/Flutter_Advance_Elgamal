@@ -1,0 +1,60 @@
+default_platform(:android)
+
+platform :android do
+  desc "Lane for android app development distribution"
+
+  lane :firebase_test_app_distribution do
+      UI.message "🔄 Starting the build process for APK..."
+
+      # Clean the Flutter project
+      sh "flutter clean"
+      UI.message "🧹 Project cleaned."
+
+      # Build the APK with production flavor
+      UI.message "🚀 Building APK for production..."
+      sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
+      UI.message "✅ APK built successfully."
+
+      # Path where the APK should be located
+      apk_path = "C:/flutter/AndroidStudioProjects/Flutter_Advance_Elgamal/build/app/outputs/flutter-apk/app-production-release.apk"
+
+      # Check if the APK exists at the given path
+      if File.exist?(apk_path)
+        UI.message "📁 APK found at: #{apk_path}"
+      else
+        UI.error "❌ APK not found at: #{apk_path}"
+        exit(1) # Exit the process if APK is not found
+      end
+
+      # Upload the APK to Firebase App Distribution
+      UI.message "📤 Uploading APK to Firebase..."
+      firebase_app_distribution(
+       app: "1:12132878880:android:9f7c6ad698a5e8247e4a45",
+#        groups: "qa-team, trusted-testers",
+       android_artifact_type: "APK",
+       android_artifact_path: apk_path,
+       testers: "mohamadelgamal2002.9.1@gmail.com,Mahmoud.a.elbitawy@gmail.com",
+       release_notes: "
+        🚀 **Production Release - v1.0.0** 🚀
+
+                 **New Features:**
+                 - 🆕 Added a brand-new user dashboard for easier navigation.
+                 - 📅 Calendar view integrated with tasks and reminders.
+                 - 🌍 Multilanguage support: Now available in Arabic and French.
+
+                 **Improvements:**
+                 - ⚡ Optimized app startup speed, reducing load time by 40%.
+                 - 🎨 Enhanced UI design for a cleaner, more modern look.
+                 - 🔒 Improved security with two-factor authentication (2FA) for all users.
+
+                 **Bug Fixes:**
+                 - 🐛 Fixed crash issues on the login screen when using invalid credentials.
+                 - 🐛 Resolved notification badge issues not displaying the correct count.
+                 - 🐛 Fixed occasional app crashes when switching between dark and light mode.
+
+       ",
+       firebase_cli_token: "1//03ntC9qAWJucoCgYIARAAGAMSNwF-L9Ir-A4_vVsyfR0qdS9tRFnNoa92uIa3Q67dWa2jhYVGry2jFkHTSezhek8lTa9OpFAbMvc"
+      )
+      UI.message "✅ APK uploaded successfully to Firebase."
+  end
+end
